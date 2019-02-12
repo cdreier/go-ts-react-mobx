@@ -28,6 +28,10 @@ func run(c *cli.Context) error {
 
 	r := chi.NewRouter()
 	r.Get("/favicon.ico", http.NotFound)
+
+	distBox := packr.New("dist", "./frontend/dist")
+	snippets.ChiFileServer(r, "/dist", distBox)
+
 	r.Get("/*", h.index)
 
 	port := c.String("port")
