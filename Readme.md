@@ -52,7 +52,7 @@ after these steps, you can simply deploy your single-binary or dockerize it on a
 
 ```
 GLOBAL OPTIONS:
-  --dev, -d                                                indicates if you want to serve fromwebpack-dev-server or dist bundle
+  --dev, -d                                                indicates if you want to serve from webpack-dev-server or dist bundle
   --webpackDevServer value, --devServer value, --ds value  server and port your webpack serveris running on (default: "http://127.0.0.1:8080/")
   --port PORT, -p PORT                                     PORT to start the server on (default: "3000") [$HTTP_PORT]
   --help, -h                                               show help

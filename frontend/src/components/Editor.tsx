@@ -1,26 +1,12 @@
-import React from 'react'
-import { observer, inject } from 'mobx-react'
-import DemoModel from '../models/DemoModel'
+import React, { useContext } from 'react'
+import { DemoStore } from '../store';
+import { observer } from 'mobx-react-lite';
 
-
-interface IProps {
-  demo?: DemoModel,
+const Editor = () => {
+  const demo = useContext(DemoStore)
+  return (
+    <input value={demo.demostring} onChange={e => demo.demostring = e.target.value} />
+  )
 }
 
-
-@inject('demo')
-@observer
-export default class Editor extends React.Component<IProps> {
-
-  change(val: string){
-    this.props.demo.demostring = val
-  }
-
-  render(){
-    return (
-      <input value={this.props.demo.demostring} onChange={e => this.change(e.target.value)} />
-    )
-  }
-
-}
-
+export default observer(Editor)

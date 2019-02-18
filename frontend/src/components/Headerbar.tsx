@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, useContext } from 'react'
 import styled from 'styled-components'
-import { inject, observer } from 'mobx-react'
-import DemoModel from '../models/DemoModel'
+import { observer } from 'mobx-react-lite';
+import { DemoStore } from '../store';
 
 const Wrapper = styled.div`
   background-color: #333;
@@ -18,23 +18,19 @@ const Demo = styled.span`
 `
 
 interface IProps {
-  demo?: DemoModel,
   children: any,
 }
 
-@inject('demo')
-@observer
-class Headerbar extends Component<IProps> {
+const Headerbar = ({children}: IProps) => {
 
+  const demo = useContext(DemoStore)
 
-  render(){
-    return (
-      <Wrapper>
-        <Title>{this.props.children}</Title>
-        <Demo>{this.props.demo.demostring}</Demo>
-      </Wrapper>
-    )
-  }
+  return (
+    <Wrapper>
+      <Title>{children}</Title>
+      <Demo>{demo.demostring}</Demo>
+    </Wrapper>
+  )
 }
 
-export default Headerbar
+export default observer(Headerbar)

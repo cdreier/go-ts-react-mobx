@@ -4,18 +4,11 @@ import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import App from './src/App'
 
-import { Provider } from 'mobx-react'
-import DemoModel from './src/models/DemoModel'
-
 // import * as mobx from 'mobx'
 // mobx.useStrict(true)
 
 declare global {
   interface NodeModule { hot : any}
-}
-
-const models = {
-  demo: new DemoModel(),
 }
 
 renderWithHotReload(App)
@@ -30,9 +23,7 @@ if (module.hot) {
 function renderWithHotReload(RootElement: any) {
   ReactDOM.render(
     <AppContainer>
-      <Provider {...models} >
-        <RootElement />
-      </Provider>
+      <RootElement />
     </AppContainer>,
     document.getElementById('mount'),
   )
