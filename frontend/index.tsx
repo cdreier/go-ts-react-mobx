@@ -8,7 +8,9 @@ import App from './src/App'
 // mobx.useStrict(true)
 
 declare global {
-  interface NodeModule { hot : any}
+  interface NodeModule { 
+    hot : any
+  }
 }
 
 renderWithHotReload(App)
