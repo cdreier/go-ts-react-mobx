@@ -6,7 +6,7 @@
 
 * react
 * react-router
-* mobx
+* mobx (with mobx-react-lite)
 * styled-components
 
 ## for quality
@@ -23,6 +23,22 @@
 we use a small [golang](https://golang.org/) webserver to serve the frontend. The HTML Template (and later the react bundle) is bundled into the binary using [packr2](https://github.com/gobuffalo/packr/tree/master/v2)
 
 With this setup it is possible to run a standalone docker image with very low hardware requirements!
+
+## starting
+
+when building the server (with a simple `go build`), you will find a go-ts-react-mobx-binary. 
+start it along with the webpack server (in 2 diffrent terminals... obviously)
+
+```
+cd frontend
+npm start
+```
+
+```
+./go-ts-react-mobx -dev
+```
+
+and you can see everything on http://localhost:3000/
 
 ## pseudo pipeline
 
