@@ -7,6 +7,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js','.json', '.ts', '.tsx'],
+    alias: {
+      'react-dom': '@hot-loader/react-dom',
+    },
   },
   module: {
     rules: [
