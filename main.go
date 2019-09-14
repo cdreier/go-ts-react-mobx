@@ -8,8 +8,6 @@ import (
 
 	"github.com/urfave/cli"
 
-	"github.com/cdreier/golang-snippets/snippets"
-
 	"github.com/gobuffalo/packr/v2"
 
 	"github.com/go-chi/chi"
@@ -30,13 +28,13 @@ func run(c *cli.Context) error {
 	r.Get("/favicon.ico", http.NotFound)
 
 	distBox := packr.New("dist", "./frontend/dist")
-	snippets.ChiFileServer(r, "/dist", distBox)
+	chiFileServer(r, "/dist", distBox)
 
 	r.Get("/*", h.index)
 
 	port := c.String("port")
 	log.Println("starting server on port ", port)
-	server := snippets.CreateHTTPServer(":"+port, r)
+	server := createHTTPServer(":"+port, r)
 	return server.ListenAndServe()
 }
 
