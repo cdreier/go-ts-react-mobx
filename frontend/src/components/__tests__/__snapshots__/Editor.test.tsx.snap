@@ -2,6 +2,7 @@
 
 exports[`testing the editor testing snapshot 1`] = `
 <input
+  data-testid="editorinput"
   onChange={[Function]}
   value="initial value"
 />

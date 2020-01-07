@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { render, fireEvent } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import Editor from '../Editor'
 
 describe('testing the editor', () => {
@@ -17,8 +17,7 @@ describe('testing the editor', () => {
       <Editor />,
     )
     const element = getByTestId('editorinput')
-    fireEvent.keyPress(element, 'a')
-    
+    expect(element).toBeInTheDocument()
   })
 
 })
