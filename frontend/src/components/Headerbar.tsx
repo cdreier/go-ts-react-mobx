@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { observer } from 'mobx-react-lite';
-import { DemoStore } from '../store';
+import { observer } from 'mobx-react-lite'
+import { DemoStore } from '../store'
 
 const Wrapper = styled.div`
   background-color: #333;
@@ -21,7 +21,7 @@ interface IProps {
   children: any,
 }
 
-const Headerbar = ({children}: IProps) => {
+const Headerbar = ({ children }: IProps) => {
 
   const demo = useContext(DemoStore)
 

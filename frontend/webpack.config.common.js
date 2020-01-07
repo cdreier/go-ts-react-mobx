@@ -6,7 +6,7 @@ module.exports = {
     publicPath: 'http://localhost:8080/dist/',
   },
   resolve: {
-    extensions: ['.js','.json', '.ts', '.tsx'],
+    extensions: ['.ts', '.tsx', '.js','.json'],
     alias: {
       'react-dom': '@hot-loader/react-dom',
     },
@@ -16,7 +16,7 @@ module.exports = {
       {
         test: /\.ts|.tsx$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: 'ts-loader',
       },
     ],
   },

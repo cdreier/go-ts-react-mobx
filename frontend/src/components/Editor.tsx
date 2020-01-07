@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import { DemoStore } from '../store';
-import { observer } from 'mobx-react-lite';
+import { DemoStore } from '../store'
+import { observer } from 'mobx-react-lite'
 
 const Editor = () => {
   const demo = useContext(DemoStore)

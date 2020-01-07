@@ -6,11 +6,7 @@ import App from './src/App'
 // import * as mobx from 'mobx'
 // mobx.useStrict(true)
 
-declare global {
-  interface NodeModule { 
-    hot : any
-  }
-}
+declare const module: any
 
 renderWithHotReload(App)
 

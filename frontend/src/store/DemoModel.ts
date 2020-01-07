@@ -2,7 +2,7 @@ import { observable } from 'mobx'
 
 class DemoModel {
 
-  @observable demostring = 'initial value'
+  @observable demostring: string = 'initial value'
 
 }
 
