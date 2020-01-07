@@ -4,7 +4,7 @@ const common = require('./webpack.config.common.js')
 
 
 module.exports = merge.smart(common, {
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   mode: 'development',
   devServer: {
     headers: {
